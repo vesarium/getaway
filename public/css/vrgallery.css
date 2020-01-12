@@ -1,0 +1,23 @@
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+/* Create two equal columns that floats next to each other */
+.vr-column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.vr-column img {
+  margin-top: 12px;
+}
+
+/* Clear floats after the columns */
+.vr-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
