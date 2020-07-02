@@ -4,65 +4,52 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/fontAwesome.css">
-        <link rel="stylesheet" href="css/hero-slider.css">
-        <link rel="stylesheet" href="css/templatemo-main.css">
-        <link rel="stylesheet" href="css/templatemo-style.css">
-        <link rel="stylesheet" href="css/owl-carousel.css">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="/css/fontAwesome.css">
+        <link rel="stylesheet" href="/css/templatemo-main.css">
+        <link rel="stylesheet" href="/css/templatemo-style.css">
+
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
         <title>{% block title %}GetAwayZone - Exit Room Escape Room Games Tallinn{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/>
+            <style>
+                .selector-for-some-widget {
+                    box-sizing: content-box;
+                }
+            </style>
+        {% endblock %}
     </head>
     <body>
+    <div class="container-fluid">
 
-    <div class="fixed-side-navbar">
-        <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="#home"><span>Intro</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#escape"><span>Escape Games</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#events"><span>Parties & Events</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#vrgames"><span>Virtual Reality Games</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact-us"><span>Contact Us</span></a></li>
-        </ul>
-    </div>
 
     <div class="parallax-content baner-content" id="home">
-        <div class="container">
-            <div class="left-text">
-                <img src="img/getaway-stamp-red-white.png" width="320px" alt="">
 
-                <span></span> <em></em></span>
-                <span>
-                <p>
-                    <em>GetAway Zone</em> presents a unique and interactive live-action adventure game. You, the players, become active participants in our stories and must work as a team to solve intriguing problems, escape from precarious situations, and unravel the plot before time runs out!
-                    Our unique “Real Life Adventure”, located in Tallinn's Old Town is designed in order to give you an immersive and fun experience. You and your friends will have a chance to use intelligence, intuition, logic and teamwork skills to solve challenging “Room Escape” puzzles.
-                    Our “Escape Game” relies heavily on communication and teamwork. Every member of the team will have to play his own part: logic, intuition, perception and even dexterity. But only truly close-knit teams will be able to escape.
-                    The game does not require the knowledge of any specific language. Introduction and clues/hints are given in English, Estonian and Russian languages.
 
-                </p>
+                <img src="/img/getaway-stamp-red-white.png" width="60px" alt="">
+                {% block body %}{% endblock %}
 
-                    <p>
-                    Gather the clues, crack the code, and solve the riddle to Breakout before time runs out! Our “Escape Room” provides a fun, unique and immersive “Real Life Game” experience for friends, families, couples, groups, teams and coworkers.
-                    </p><p>
-                        Book your “Exit Game” experience today for bachelor parties, team building, birthday celebrations, corporate events and new adventures in a family-friendly environment!
-                    </p>
 
-                </span>
-
-                <!--
-                <div class="primary-button">
-                    <a href="#services">Discover More</a>
-                </div>
-                -->
-
-            </div>
         </div>
     </div>
+    </div>
+    {% block javascripts %}
+
+        <script src="{{ asset('js/jquery.validate.min.js') }}"></script>
+        <script src="{{ asset('js/bookAppointment.js') }}"></script>
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/popper.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+    {% endblock %}
+
     </body>
+
 </html>

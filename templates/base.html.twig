@@ -82,7 +82,8 @@
 
                             Enroll for this dangerous mission so to receive the final instructions in your email…</p>
                         <div class="primary-button">
-                            <a href="#services">Book Now</a>
+
+                            <a href="{{ path('book', {'slug':'redalert'}) }}">Book Now</a>
                         </div>
                     </div>
                 </section>
@@ -102,7 +103,7 @@
                         </p>
 
                         <div class="primary-button">
-                            <a href="#services">Book Now</a>
+                            <a href="{{ path('book', {'slug':'the_conjuring'}) }}">Book Now</a>
                         </div>
                     </div>
 
@@ -405,6 +406,12 @@
     </script>
     <script src="js/jquery.scrollTo.min.js"></script>
     <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="{{ asset('js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('js/bookAppointment.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
     {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

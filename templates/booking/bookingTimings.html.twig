@@ -1,0 +1,8 @@
+{% for date,bookingTime in bookingTimes %}
+    <tr class="text-center">
+        <th scope="row" class="table-primary">{{date}}</th>
+        {% for time,status in bookingTime %}
+            <td class="{{(status == 'available')? 'table-success available': ((status == 'unavailable')? 'table-danger': 'table-secondary') }}">{{time}}</td>
+        {% endfor %}
+    </tr>
+{% endfor %}

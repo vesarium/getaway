@@ -1,0 +1,48 @@
+{% extends 'book.html.twig' %}
+{% block stylesheets %}
+    {{parent()}}
+    <link href="{{ asset('/css/custom.css') }}" rel="stylesheet"/>
+{% endblock %}
+{% block title %}Booking App - Book Appointment{% endblock %}
+
+{% block body %}
+    <main role="main">
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center mb-4 text-bold">
+                        <h3>{{ level_name }}</h3>
+                    </div>
+                </div>
+                <div class="row bookAppointment">
+                    <div class="col-md-12">
+                        {% for message in app.flashes('success') %}
+                            <div class="alert alert-success">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                        {% for message in app.flashes('error') %}
+                            <div class="alert alert-danger">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                        <div class="table-responsive">
+                            <table id="bookTimings" class="table table-bordered">
+                                <tbody>
+                                    {% include 'booking/bookingTimings.html.twig' %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="endOfList" data-href="{{ path('fetch-appointment-days') }}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% include 'booking/bookingForm.html.twig' %}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('js/bookAppointment.js') }}"></script>
+{% endblock %}
